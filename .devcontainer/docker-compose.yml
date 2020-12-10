@@ -1,0 +1,25 @@
+version: '3.4'
+services:
+  my-template:
+    user: vscode    
+    image: my-template
+    hostname: my-template
+    container_name: my-template
+    build:
+      dockerfile: ./.devcontainer/Dockerfile
+      context: ..
+    ports:
+      - 22:22
+    volumes:
+      - ../.:/app
+    networks:
+      - devnet
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    env_file:
+      - ~/.psmware/psmware.env
+volumes: 
+  app: 
+
+networks:
+  devnet:
+    external: true

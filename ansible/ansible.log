@@ -1,0 +1,20 @@
+2020-09-01 09:00:02,984 p=331 u=vscode n=pyats.tcl | TclHistory is enabled.
+2020-09-01 09:00:03,097 p=331 u=vscode n=unicon | viptela is not part of the built-in list of supported OSes.
+2020-09-01 09:00:03,142 p=331 u=vscode n=pyats.tcl | TclHistory is enabled.
+2020-09-01 09:00:03,544 p=331 u=vscode n=ansible | PLAY [Setup SSH - Post Container Build/Rebuild] *****************************************************************************************************************************
+2020-09-01 09:00:03,555 p=331 u=vscode n=ansible | TASK [Create the .ssh Directory] ********************************************************************************************************************************************
+2020-09-01 09:00:03,555 p=331 u=vscode n=ansible | Tuesday 01 September 2020  09:00:03 +0000 (0:00:00.025)       0:00:00.025 ***** 
+2020-09-01 09:00:03,868 p=331 u=vscode n=ansible | changed: [localhost]
+2020-09-01 09:00:03,871 p=331 u=vscode n=ansible | TASK [Copy ssh files] *******************************************************************************************************************************************************
+2020-09-01 09:00:03,871 p=331 u=vscode n=ansible | Tuesday 01 September 2020  09:00:03 +0000 (0:00:00.315)       0:00:00.341 ***** 
+2020-09-01 09:00:04,375 p=331 u=vscode n=ansible | changed: [localhost] => (item={'src': 'config', 'tgt': 'config', 'mode': '0600'})
+2020-09-01 09:00:04,600 p=331 u=vscode n=ansible | changed: [localhost] => (item={'src': 'psmware', 'tgt': 'id_rsa', 'mode': '0600'})
+2020-09-01 09:00:04,814 p=331 u=vscode n=ansible | changed: [localhost] => (item={'src': 'psmware.pub', 'tgt': 'id_rsa.pub', 'mode': '0644'})
+2020-09-01 09:00:06,083 p=331 u=vscode n=ansible | changed: [localhost] => (item={'src': 'known_hosts', 'tgt': 'known_hosts', 'mode': '0644'})
+2020-09-01 09:00:06,087 p=331 u=vscode n=ansible | PLAY RECAP ******************************************************************************************************************************************************************
+2020-09-01 09:00:06,087 p=331 u=vscode n=ansible | localhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-09-01 09:00:06,088 p=331 u=vscode n=ansible | Tuesday 01 September 2020  09:00:06 +0000 (0:00:02.216)       0:00:02.558 ***** 
+2020-09-01 09:00:06,088 p=331 u=vscode n=ansible | =============================================================================== 
+2020-09-01 09:00:06,088 p=331 u=vscode n=ansible | Copy ssh files ------------------------------------------------------------------------------------------------------------------------------------------------------- 2.22s
+2020-09-01 09:00:06,088 p=331 u=vscode n=ansible | Create the .ssh Directory -------------------------------------------------------------------------------------------------------------------------------------------- 0.32s
+2020-09-01 09:00:06,088 p=331 u=vscode n=ansible | Playbook run took 0 days, 0 hours, 0 minutes, 2 seconds

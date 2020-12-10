@@ -1,0 +1,33 @@
+---
+- name: Setup SSH - Post Container Build/Rebuild
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    my_ssh_src: /app/.vscode/
+    my_ssh_dir: /home/vscode/.ssh/
+    my_id: vscode
+
+  tasks:
+    - name: Create the .ssh Directory
+      file:
+        path: "{{ my_ssh_dir }}"
+        state: directory
+        mode: "0700"
+        owner: "{{my_id}}"
+        group: "{{my_id}}"
+    
+    - name: Copy ssh files
+      copy:
+        src: "{{my_ssh_src}}/{{item.src}}"
+        dest: "{{my_ssh_dir}}/{{item.tgt}}"
+        owner: "{{my_id}}"
+        group: "{{my_id}}"
+        mode: "{{item.mode}}"
+      loop:
+        - { src: config, tgt: config, mode: "0600" }
+        - { src: psmware, tgt: id_rsa, mode: "0600" }
+        - { src: psmware.pub, tgt: id_rsa.pub, mode: "0644" }
+        - { src: known_hosts, tgt: known_hosts, mode: "0644" }
+          
